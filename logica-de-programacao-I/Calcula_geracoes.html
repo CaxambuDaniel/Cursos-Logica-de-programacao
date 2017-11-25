@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Calcula Gerações </title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function pulaLinha(){
+		document.write("<br>");
+	}
+
+	function mostra(texto){
+		document.write(texto);
+	}
+
+	var descobrimento = 1500;
+	var anoAtual = 2017;
+	var mediaGeracao = 28;
+
+	var qtdGeracoes = (anoAtual - descobrimento)/mediaGeracao;
+
+	mostra("a quantidade media de gerãções no Brasil desde o descobrimento é de: " 
+		+ Math.round(qtdGeracoes)); 
+
+	
+</script>
+</html>
