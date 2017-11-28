@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>esquadro</title>
+</head>
+<body>
+	<canvas width="600" height="400"></canvas>
+</body>
+</html>
+
+<script type="text/javascript">
+	
+	var tela = document.querySelector("canvas");
+	var pincel = tela.getContext("2d");
+
+	function desenhaTriangulo(xa, ya, xc, yc, cor){
+		pincel.fillStyle = cor;
+		pincel.beginPath();
+		pincel.moveTo(xa, ya);
+		pincel.lineTo(xa, yc);
+		pincel.lineTo(xc, yc);
+		pincel.fill();
+	}
+	
+	desenhaTriangulo(50,50,400,400,"black");
+	desenhaTriangulo(100,175,275,350,"white");	
+
+</script>
