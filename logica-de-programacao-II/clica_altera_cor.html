@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<canvas width="600" height="400"></canvas>
+</body>
+</html>
+
+<script type="text/javascript">
+
+	var tela = document.querySelector("canvas");
+	var pincel = tela.getContext("2d");
+	
+	pincel.fillStyle = "grey";
+	pincel.fillRect(0,0,600,400);
+
+	pincel.fillStyle = "blue";
+
+	function desenhaCirculo(evento, cor ){
+		
+		var x = evento.pageX - tela.offsetLeft;
+		var y = evento.pageY - tela.offsetTop;
+
+		pincel.fillStyle = cor;
+		pincel.beginPath();
+		pincel.arc(x,y,10,0,2*3.14);
+		pincel.fill(); 
+		console.log(x + " " + y);
+				
+	}
+
+	var cor = ["blue","red", "green" ]
+	var cont = 1; //variavel de armazenamento para alteração da cor
+
+	function mudaCor(){
+
+
+		desenhaCirculo(tela.onclick = desenhaCirculo, cor[cont]);
+		cont ++;
+
+		if(cont >= cor.length){
+			cont = 0;
+		}
+
+		return false; // para não exibir o menu padrão do canvas
+
+	}
+
+	alert("clique com o botao esquerdo para mudar a cor da bolinha")
+	tela.onclick = desenhaCirculo;
+	tela.oncontextmenu = mudaCor;
+
+	
+
+</script>
